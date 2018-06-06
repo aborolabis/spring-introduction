@@ -7,6 +7,6 @@ import java.math.BigDecimal;
 public class TestCreditCardProcessor implements CreditCardProcessor {
 
     public ChargeResult charge(CreditCard creditCard, BigDecimal amound) {
-        return null;
+        return new ChargeResult(true, "Message");
     }
 }

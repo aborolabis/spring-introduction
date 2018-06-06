@@ -4,16 +4,38 @@ import java.math.BigDecimal;
 
 public class Receipt {
 
-    public static Receipt forSuccessfulCharge(BigDecimal amount){
-        return null;
+    private final BigDecimal amount;
+    private final boolean successful;
+    private final String message;
+
+    public Receipt(BigDecimal amount, String message, boolean successful) {
+        this.amount = amount;
+        this.message = message;
+        this.successful = successful;
     }
 
-    public static Receipt forDeclinedCharge(String message){
-        return null;
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public boolean isSuccessful() {
+        return successful;
+    }
+
+    public static Receipt forSuccessfulCharge(BigDecimal amount){
+        return new Receipt(amount, "", true);
+    }
+
+    public static Receipt forDeclinedCharge(String declineMessage){
+        return new Receipt(BigDecimal.ZERO, declineMessage, false);
     }
 
     public static Receipt forSystemFailure(String message){
-        return null;
+        return new Receipt(BigDecimal.ZERO, message, false);
     }
 
 
