@@ -1,4 +1,8 @@
-package pl.dominisz.springintroduction.service;
+package pl.aborolabis.springintroduction.service;
+
+import pl.aborolabis.springintroduction.model.CreditCard;
+import pl.aborolabis.springintroduction.model.PizzaOrder;
+import pl.aborolabis.springintroduction.model.Receipt;
 
 public interface BillingService {
 

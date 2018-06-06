@@ -1,7 +1,9 @@
-package pl.dominisz.springintroduction;
+package pl.aborolabis.springintroduction;
 
-import pl.dominisz.springintroduction.service.BillingService;
-import pl.dominisz.springintroduction.service.CreditCardBillingService;
+import pl.aborolabis.springintroduction.model.CreditCard;
+import pl.aborolabis.springintroduction.model.PizzaOrder;
+import pl.aborolabis.springintroduction.model.Receipt;
+import pl.aborolabis.springintroduction.service.*;
 
 public class Application {
 
