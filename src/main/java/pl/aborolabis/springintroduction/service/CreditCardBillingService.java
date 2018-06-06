@@ -8,8 +8,8 @@ import pl.aborolabis.springintroduction.model.Receipt;
 public class CreditCardBillingService implements BillingService {
 
     public Receipt chargeOrder(PizzaOrder order, CreditCard creditCard) {
-        CreditCardProcessor processor = new PaypalCreditCardProcessor();
-        TransactionLog transactionLog = new DatabaseTransactionLog();
+        CreditCardProcessor processor = CreditCardProcessorFactory.getInstance();
+        TransactionLog transactionLog = TransactionLogFactory.getInstance();
 
         try {
             ChargeResult result = processor.charge(creditCard, order.getAmount());

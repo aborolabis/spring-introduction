@@ -9,6 +9,9 @@ public class Application {
 
     public static void main(String[] args) {
 
+        CreditCardProcessorFactory.setInstance(new PaypalCreditCardProcessor());
+        TransactionLogFactory.setInstance(new DatabaseTransactionLog());
+
         BillingService billingService = new CreditCardBillingService();
 
         PizzaOrder pizzaOrder = new PizzaOrder();
