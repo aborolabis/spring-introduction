@@ -9,6 +9,9 @@ public class CreditCardBillingServiceTest {
 
     @Test
     void shouldCreateReceiptForProperOrder() {
+        CreditCardProcessorFactory.setInstance(new TestCreditCardProcessor());
+        TransactionLogFactory.setInstance(new TestTransactionLog());
+
         CreditCardBillingService creditCardBillingService = new CreditCardBillingService();
 
         PizzaOrder pizzaOrder = new PizzaOrder();
